@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassCustomMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ClassCustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
