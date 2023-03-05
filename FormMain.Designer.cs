@@ -47,6 +47,7 @@
             this.listBoxOutput = new System.Windows.Forms.ListBox();
             this.buttonRun = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,11 +206,21 @@
             this.buttonView.Text = "View";
             this.buttonView.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(686, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonView);
             this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.listBoxOutput);
@@ -247,6 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blueLightContrastToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

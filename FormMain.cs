@@ -54,10 +54,12 @@ namespace Software_Engineering_Project
         private void ButtonRun_Click(object sender, EventArgs e)
         {
 
-            //while(listBoxProjectOpener.SelectedItem.ToString() != null)
-            //{
-            //    listBoxOutput.Items.Add(openFileDialog1.OpenFile());
-            //}
+            //If a file is selected  
+            var selectedFile = listBoxProjectOpener.SelectedItem as string;
+            if (String.IsNullOrEmpty(selectedFile))
+                return;
+
+            //Open the file
         }
 
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
