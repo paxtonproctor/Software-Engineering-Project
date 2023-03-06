@@ -62,5 +62,10 @@ namespace Software_Engineering_Project
         {
             Application.Exit();
         }
+
+        private void buttonView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

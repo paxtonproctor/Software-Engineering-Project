@@ -38,10 +38,10 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectGraderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonView = new Software_Engineering_Project.ClassCustomButton();
-            this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
+            this.buttonView = new Software_Engineering_Project.ClassCustomButton();
             this.mainMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             this.labelTitlecard.AutoSize = true;
             this.labelTitlecard.Font = new System.Drawing.Font("Matura MT Script Capitals", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitlecard.Location = new System.Drawing.Point(25, 27);
+            this.labelTitlecard.Location = new System.Drawing.Point(37, 0);
             this.labelTitlecard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitlecard.Name = "labelTitlecard";
             this.labelTitlecard.Size = new System.Drawing.Size(554, 50);
@@ -59,17 +59,15 @@
             // 
             // listBoxProjectOpener
             // 
-            this.listBoxProjectOpener.FormattingEnabled = true;
-            this.listBoxProjectOpener.Location = new System.Drawing.Point(9, 79);
-            this.listBoxProjectOpener.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxProjectOpener.Location = new System.Drawing.Point(12, 53);
             this.listBoxProjectOpener.Name = "listBoxProjectOpener";
             this.listBoxProjectOpener.Size = new System.Drawing.Size(278, 212);
-            this.listBoxProjectOpener.TabIndex = 2;
+            this.listBoxProjectOpener.TabIndex = 10;
             // 
             // listBoxOutput
             // 
             this.listBoxOutput.FormattingEnabled = true;
-            this.listBoxOutput.Location = new System.Drawing.Point(314, 79);
+            this.listBoxOutput.Location = new System.Drawing.Point(314, 52);
             this.listBoxOutput.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxOutput.Name = "listBoxOutput";
             this.listBoxOutput.Size = new System.Drawing.Size(278, 212);
@@ -102,14 +100,14 @@
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openFileToolStripMenuItem.Text = "&Open";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.OpenFileToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -133,40 +131,44 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // buttonView
+            // viewHelpToolStripMenuItem
             // 
-            this.buttonView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonView.Location = new System.Drawing.Point(314, 12);
-            this.buttonView.Name = "buttonView";
-            this.buttonView.Size = new System.Drawing.Size(278, 61);
-            this.buttonView.TabIndex = 8;
-            this.buttonView.Text = "View";
-            this.buttonView.UseVisualStyleBackColor = true;
+            this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.viewHelpToolStripMenuItem.Text = "&View Help";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.buttonRun);
+            this.panel1.Controls.Add(this.labelTitlecard);
+            this.panel1.Controls.Add(this.listBoxOutput);
+            this.panel1.Controls.Add(this.buttonView);
+            this.panel1.Controls.Add(this.listBoxProjectOpener);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 351);
+            this.panel1.TabIndex = 10;
             // 
             // buttonRun
             // 
             this.buttonRun.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRun.Location = new System.Drawing.Point(9, 12);
+            this.buttonRun.Location = new System.Drawing.Point(12, 275);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(278, 61);
             this.buttonRun.TabIndex = 9;
             this.buttonRun.Text = "Run";
             // 
-            // viewHelpToolStripMenuItem
+            // buttonView
             // 
-            this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewHelpToolStripMenuItem.Text = "&View Help";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.buttonRun);
-            this.panel1.Controls.Add(this.buttonView);
-            this.panel1.Location = new System.Drawing.Point(0, 296);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 88);
-            this.panel1.TabIndex = 10;
+            this.buttonView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonView.Location = new System.Drawing.Point(314, 275);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(278, 61);
+            this.buttonView.TabIndex = 8;
+            this.buttonView.Text = "View";
+            this.buttonView.UseVisualStyleBackColor = true;
+            this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
             // FormMain
             // 
@@ -174,9 +176,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 381);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listBoxOutput);
-            this.Controls.Add(this.listBoxProjectOpener);
-            this.Controls.Add(this.labelTitlecard);
             this.Controls.Add(this.mainMenuStrip);
             this.MainMenuStrip = this.mainMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -185,6 +184,7 @@
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
