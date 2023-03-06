@@ -9,18 +9,37 @@ using System.Drawing.Drawing2D;
 
 namespace Software_Engineering_Project
 {
-    class ClassCustomButton : Button
+    public class ClassCustomButton : Button
     {
-        private int borderSize = 0;
-        private int borderRadius = 40;
-        private Color borderColor = Color.Black;
-
-        public ClassCustomButton()
+        protected override void OnPaint(PaintEventArgs e)
         {
-            this.FlatStyle = FlatStyle.Flat;
-            this.FlatAppearance.BorderSize = 0;
-            this.Size = new Size(150, 40);
-            this.BackColor = Color.LightBlue;
+            base.OnPaint(e);
+
+            // Define a rectangle that will be used to draw the rounded corners
+            RectangleF rect = new RectangleF(0, 0, Width, Height);
+
+            // Define the radius of the rounded corners
+            float radius = 20;
+
+            // Create a graphics path that defines the shape of the button
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            // Fill the button with a solid color and draw its border
+            e.Graphics.FillPath(Brushes.White, path);
+            e.Graphics.DrawPath(Pens.Black, path);
+
+            // Draw the button text in the center
+            StringFormat sf = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+            e.Graphics.DrawString(Text, Font, Brushes.Black, ClientRectangle, sf);
         }
     }
 }

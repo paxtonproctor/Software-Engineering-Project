@@ -15,7 +15,7 @@ namespace Software_Engineering_Project
 {
     public partial class FormMain : Form
     {
-        OpenFileDialog openFileDialog1 = new OpenFileDialog
+        readonly OpenFileDialog openFileDialog1 = new OpenFileDialog
         {
 
             InitialDirectory = @"D:\",
@@ -36,14 +36,10 @@ namespace Software_Engineering_Project
         public FormMain()
         {
             InitializeComponent();
-
-            
         }
 
         private void OpenFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -62,14 +58,9 @@ namespace Software_Engineering_Project
             //Open the file
         }
 
-        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+            Application.Exit();
         }
     }
 }
