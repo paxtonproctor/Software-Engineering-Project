@@ -63,6 +63,7 @@ namespace Software_Engineering_Project
             buttonRun.Enabled = false;
             buttonView.Enabled = false;
 
+            #region Events
             buttonFile.MouseHover += ButtonFile_MouseHover;
             buttonEdit.MouseHover += ButtonEdit_MouseHover;
             buttonHelp.MouseHover += ButtonHelp_MouseHover;
@@ -71,8 +72,10 @@ namespace Software_Engineering_Project
             buttonView.MouseHover += ButtonView_MouseHover;
             listBoxProjectOpener.MouseHover += ListBoxProjectOpener_MouseHover;
             listBoxOutput.MouseHover += ListBoxOutput_MouseHover;
+            #endregion
         }
 
+        #region MouseHover ToolTips
         private void ListBoxOutput_MouseHover(object sender, EventArgs e)
         {
             toolTipFile.SetToolTip(listBoxOutput, "Code will be Here");
@@ -112,6 +115,7 @@ namespace Software_Engineering_Project
         {
             toolTipFile.SetToolTip(buttonFile, "Open Files here");
         }
+        #endregion
 
         #region Sub Menu Stuff
 
