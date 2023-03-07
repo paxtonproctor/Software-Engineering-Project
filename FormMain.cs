@@ -244,8 +244,7 @@ namespace Software_Engineering_Project
         {
             Application.Exit();
         }
-        #endregion
 
-        
+        #endregion
     }
 }

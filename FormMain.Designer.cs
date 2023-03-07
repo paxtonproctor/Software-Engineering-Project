@@ -39,8 +39,6 @@
             this.panelSubMenuHelp = new System.Windows.Forms.Panel();
             this.panelSubMenuEdit = new System.Windows.Forms.Panel();
             this.panelSubMenuFile = new System.Windows.Forms.Panel();
-            this.buttonView = new Software_Engineering_Project.ClassCustomButton();
-            this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonProgramGrader = new System.Windows.Forms.Button();
@@ -49,7 +47,9 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonExit = new System.Windows.Forms.Button();
+            this.buttonView = new Software_Engineering_Project.ClassCustomButton();
+            this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
             this.panelMain.SuspendLayout();
             this.PanelMainControls.SuspendLayout();
             this.PanelExit.SuspendLayout();
@@ -121,7 +121,7 @@
             // 
             this.PanelExit.BackColor = System.Drawing.Color.Gray;
             this.PanelExit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelExit.Controls.Add(this.button1);
+            this.PanelExit.Controls.Add(this.ButtonExit);
             this.PanelExit.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelExit.Location = new System.Drawing.Point(0, 0);
             this.PanelExit.Name = "PanelExit";
@@ -177,28 +177,6 @@
             this.panelSubMenuFile.Name = "panelSubMenuFile";
             this.panelSubMenuFile.Size = new System.Drawing.Size(177, 59);
             this.panelSubMenuFile.TabIndex = 6;
-            // 
-            // buttonView
-            // 
-            this.buttonView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonView.Location = new System.Drawing.Point(509, 26);
-            this.buttonView.Name = "buttonView";
-            this.buttonView.Size = new System.Drawing.Size(278, 61);
-            this.buttonView.TabIndex = 8;
-            this.buttonView.Text = "View";
-            this.buttonView.UseVisualStyleBackColor = true;
-            this.buttonView.Click += new System.EventHandler(this.ButtonView_Click);
-            // 
-            // buttonRun
-            // 
-            this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRun.Location = new System.Drawing.Point(207, 26);
-            this.buttonRun.Name = "buttonRun";
-            this.buttonRun.Size = new System.Drawing.Size(278, 61);
-            this.buttonRun.TabIndex = 9;
-            this.buttonRun.Text = "Run";
             // 
             // buttonAbout
             // 
@@ -361,25 +339,48 @@
             this.buttonFile.UseVisualStyleBackColor = true;
             this.buttonFile.Click += new System.EventHandler(this.ButtonFile_Click);
             // 
-            // button1
+            // ButtonExit
             // 
-            this.button1.Image = global::Software_Engineering_Project.Properties.Resources.icons8_exit_48;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(10, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 61);
-            this.button1.TabIndex = 0;
-            this.button1.Tag = "https://icons8.com/icons/set/website";
-            this.button1.Text = "Exit";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonExit.Image = global::Software_Engineering_Project.Properties.Resources.icons8_exit_48;
+            this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExit.Location = new System.Drawing.Point(10, 25);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(166, 61);
+            this.ButtonExit.TabIndex = 0;
+            this.ButtonExit.Tag = "https://icons8.com/icons/set/website";
+            this.ButtonExit.Text = "Exit";
+            this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            // 
+            // buttonView
+            // 
+            this.buttonView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonView.Location = new System.Drawing.Point(509, 26);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(278, 61);
+            this.buttonView.TabIndex = 8;
+            this.buttonView.Text = "View";
+            this.buttonView.UseVisualStyleBackColor = true;
+            this.buttonView.Click += new System.EventHandler(this.ButtonView_Click);
+            // 
+            // buttonRun
+            // 
+            this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRun.Location = new System.Drawing.Point(207, 26);
+            this.buttonRun.Name = "buttonRun";
+            this.buttonRun.Size = new System.Drawing.Size(278, 61);
+            this.buttonRun.TabIndex = 9;
+            this.buttonRun.Text = "Run";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
             this.ClientSize = new System.Drawing.Size(806, 423);
             this.Controls.Add(this.panelSideMenuPanel);
             this.Controls.Add(this.PanelMainControls);
@@ -420,7 +421,7 @@
         private System.Windows.Forms.Button buttonDarkTheme;
         private System.Windows.Forms.Button buttonLightTheme;
         private System.Windows.Forms.Panel PanelExit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonExit;
     }
 }
 
