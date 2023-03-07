@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.labelTitlecard = new System.Windows.Forms.Label();
             this.listBoxProjectOpener = new System.Windows.Forms.ListBox();
@@ -35,21 +36,22 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.PanelMainControls = new System.Windows.Forms.Panel();
             this.PanelExit = new System.Windows.Forms.Panel();
+            this.ButtonExit = new System.Windows.Forms.Button();
             this.panelSideMenuPanel = new System.Windows.Forms.Panel();
             this.panelSubMenuHelp = new System.Windows.Forms.Panel();
-            this.panelSubMenuEdit = new System.Windows.Forms.Panel();
-            this.panelSubMenuFile = new System.Windows.Forms.Panel();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonProgramGrader = new System.Windows.Forms.Button();
+            this.panelSubMenuEdit = new System.Windows.Forms.Panel();
             this.buttonDarkTheme = new System.Windows.Forms.Button();
             this.buttonLightTheme = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.panelSubMenuFile = new System.Windows.Forms.Panel();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
-            this.ButtonExit = new System.Windows.Forms.Button();
             this.buttonView = new Software_Engineering_Project.ClassCustomButton();
             this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
+            this.toolTipFile = new System.Windows.Forms.ToolTip(this.components);
             this.panelMain.SuspendLayout();
             this.PanelMainControls.SuspendLayout();
             this.PanelExit.SuspendLayout();
@@ -61,7 +63,7 @@
             // 
             // labelTitlecard
             // 
-            this.labelTitlecard.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.labelTitlecard.BackColor = System.Drawing.SystemColors.Info;
             this.labelTitlecard.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelTitlecard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitlecard.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -119,7 +121,7 @@
             // 
             // PanelExit
             // 
-            this.PanelExit.BackColor = System.Drawing.Color.Gray;
+            this.PanelExit.BackColor = System.Drawing.SystemColors.Info;
             this.PanelExit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelExit.Controls.Add(this.ButtonExit);
             this.PanelExit.Dock = System.Windows.Forms.DockStyle.Left;
@@ -127,6 +129,21 @@
             this.PanelExit.Name = "PanelExit";
             this.PanelExit.Size = new System.Drawing.Size(200, 107);
             this.PanelExit.TabIndex = 10;
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.Image = global::Software_Engineering_Project.Properties.Resources.icons8_exit_48;
+            this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExit.Location = new System.Drawing.Point(10, 25);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(166, 61);
+            this.ButtonExit.TabIndex = 0;
+            this.ButtonExit.Tag = "https://icons8.com/icons/set/website";
+            this.ButtonExit.Text = "Exit";
+            this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // panelSideMenuPanel
             // 
@@ -156,27 +173,6 @@
             this.panelSubMenuHelp.Name = "panelSubMenuHelp";
             this.panelSubMenuHelp.Size = new System.Drawing.Size(177, 61);
             this.panelSubMenuHelp.TabIndex = 11;
-            // 
-            // panelSubMenuEdit
-            // 
-            this.panelSubMenuEdit.BackColor = System.Drawing.SystemColors.Info;
-            this.panelSubMenuEdit.Controls.Add(this.buttonDarkTheme);
-            this.panelSubMenuEdit.Controls.Add(this.buttonLightTheme);
-            this.panelSubMenuEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuEdit.Location = new System.Drawing.Point(0, 229);
-            this.panelSubMenuEdit.Name = "panelSubMenuEdit";
-            this.panelSubMenuEdit.Size = new System.Drawing.Size(177, 111);
-            this.panelSubMenuEdit.TabIndex = 8;
-            // 
-            // panelSubMenuFile
-            // 
-            this.panelSubMenuFile.BackColor = System.Drawing.SystemColors.Info;
-            this.panelSubMenuFile.Controls.Add(this.buttonOpenFile);
-            this.panelSubMenuFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuFile.Location = new System.Drawing.Point(0, 115);
-            this.panelSubMenuFile.Name = "panelSubMenuFile";
-            this.panelSubMenuFile.Size = new System.Drawing.Size(177, 59);
-            this.panelSubMenuFile.TabIndex = 6;
             // 
             // buttonAbout
             // 
@@ -239,6 +235,17 @@
             this.buttonProgramGrader.UseVisualStyleBackColor = true;
             this.buttonProgramGrader.Click += new System.EventHandler(this.ButtonProgramGrader_Click);
             // 
+            // panelSubMenuEdit
+            // 
+            this.panelSubMenuEdit.BackColor = System.Drawing.SystemColors.Info;
+            this.panelSubMenuEdit.Controls.Add(this.buttonDarkTheme);
+            this.panelSubMenuEdit.Controls.Add(this.buttonLightTheme);
+            this.panelSubMenuEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuEdit.Location = new System.Drawing.Point(0, 229);
+            this.panelSubMenuEdit.Name = "panelSubMenuEdit";
+            this.panelSubMenuEdit.Size = new System.Drawing.Size(177, 111);
+            this.panelSubMenuEdit.TabIndex = 8;
+            // 
             // buttonDarkTheme
             // 
             this.buttonDarkTheme.Dock = System.Windows.Forms.DockStyle.Top;
@@ -298,6 +305,16 @@
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
+            // panelSubMenuFile
+            // 
+            this.panelSubMenuFile.BackColor = System.Drawing.SystemColors.Info;
+            this.panelSubMenuFile.Controls.Add(this.buttonOpenFile);
+            this.panelSubMenuFile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuFile.Location = new System.Drawing.Point(0, 115);
+            this.panelSubMenuFile.Name = "panelSubMenuFile";
+            this.panelSubMenuFile.Size = new System.Drawing.Size(177, 59);
+            this.panelSubMenuFile.TabIndex = 6;
+            // 
             // buttonOpenFile
             // 
             this.buttonOpenFile.Dock = System.Windows.Forms.DockStyle.Top;
@@ -338,21 +355,6 @@
             this.buttonFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFile.UseVisualStyleBackColor = true;
             this.buttonFile.Click += new System.EventHandler(this.ButtonFile_Click);
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.Image = global::Software_Engineering_Project.Properties.Resources.icons8_exit_48;
-            this.ButtonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonExit.Location = new System.Drawing.Point(10, 25);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(166, 61);
-            this.ButtonExit.TabIndex = 0;
-            this.ButtonExit.Tag = "https://icons8.com/icons/set/website";
-            this.ButtonExit.Text = "Exit";
-            this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonView
             // 
@@ -422,6 +424,7 @@
         private System.Windows.Forms.Button buttonLightTheme;
         private System.Windows.Forms.Panel PanelExit;
         private System.Windows.Forms.Button ButtonExit;
+        private System.Windows.Forms.ToolTip toolTipFile;
     }
 }
 

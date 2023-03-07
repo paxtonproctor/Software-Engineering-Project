@@ -18,7 +18,7 @@ namespace Software_Engineering_Project
         // create open file so we can pull files from our desktop to run
         readonly OpenFileDialog openFileDialog1 = new OpenFileDialog
         {
-
+            Multiselect = true,
             InitialDirectory = @"D:\",
             Title = "Browse Text Files",
 
@@ -38,11 +38,79 @@ namespace Software_Engineering_Project
         {
             InitializeComponent();
 
+            #region form
+            panelMain.BackColor = Color.LightGray;
+            labelTitlecard.BackColor = Color.Tan;
+            panelSideMenuPanel.BackColor = Color.WhiteSmoke;
+            buttonFile.ForeColor = Color.Black;
+            buttonEdit.ForeColor = Color.Black;
+            buttonHelp.ForeColor = Color.Black;
+            buttonProgramGrader.ForeColor = Color.Black;
+            panelSubMenuFile.BackColor = Color.Tan;
+            panelSubMenuEdit.BackColor = Color.Tan;
+            panelSubMenuHelp.BackColor = Color.Tan;
+            buttonLightTheme.ForeColor = Color.Black;
+            buttonDarkTheme.ForeColor = Color.Black;
+            buttonAbout.ForeColor = Color.Black;
+            buttonOpenFile.ForeColor = Color.Black;
+            PanelExit.BackColor = Color.Tan;
+            PanelMainControls.BackColor = Color.Gray;
+            #endregion
+
             // Hides submenus initially
             SubMenuDesign();
 
             buttonRun.Enabled = false;
             buttonView.Enabled = false;
+
+            buttonFile.MouseHover += ButtonFile_MouseHover;
+            buttonEdit.MouseHover += ButtonEdit_MouseHover;
+            buttonHelp.MouseHover += ButtonHelp_MouseHover;
+            ButtonExit.MouseHover += ButtonExit_MouseHover;
+            buttonRun.MouseHover += ButtonRun_MouseHover;
+            buttonView.MouseHover += ButtonView_MouseHover;
+            listBoxProjectOpener.MouseHover += ListBoxProjectOpener_MouseHover;
+            listBoxOutput.MouseHover += ListBoxOutput_MouseHover;
+        }
+
+        private void ListBoxOutput_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(listBoxOutput, "Code will be Here");
+        }
+
+        private void ListBoxProjectOpener_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(listBoxProjectOpener, "Files will be placed here");
+        }
+
+        private void ButtonView_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonView, "View Statistics and more here");
+        }
+
+        private void ButtonRun_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonRun, "Run Code here");
+        }
+
+        private void ButtonExit_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(ButtonExit, "Exit here");
+        }
+
+        private void ButtonHelp_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonHelp, "Instructions here");
+        }
+
+        private void ButtonEdit_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonEdit, "Change Themes here");
+        }
+
+        private void ButtonFile_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonFile, "Open Files here");
         }
 
         #region Sub Menu Stuff
@@ -134,7 +202,10 @@ namespace Software_Engineering_Project
             // Add Filename into ListBox
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                listBoxProjectOpener.Items.Add(Path.GetFileName(openFileDialog1.FileName));
+                foreach (string filename in openFileDialog1.FileNames)
+                {
+                    listBoxProjectOpener.Items.Add(Path.GetFileName(openFileDialog1.FileName));
+                }
             }
             // Hides the Open File button after use
             HideSubMenu();
@@ -147,22 +218,22 @@ namespace Software_Engineering_Project
         /// <param name="e"></param>
         private void ButtonLightTheme_Click(object sender, EventArgs e)
         {
-            panelMain.BackColor = Color.Transparent;
-            labelTitlecard.BackColor = Color.Transparent;
-            panelSideMenuPanel.BackColor = Color.Transparent;
+            panelMain.BackColor = Color.LightGray;
+            labelTitlecard.BackColor = Color.Tan;
+            panelSideMenuPanel.BackColor = Color.WhiteSmoke;
             buttonFile.ForeColor = Color.Black;
             buttonEdit.ForeColor = Color.Black;
             buttonHelp.ForeColor = Color.Black;
             buttonProgramGrader.ForeColor = Color.Black;
-            panelSubMenuFile.BackColor = Color.Transparent;
-            panelSubMenuEdit.BackColor = Color.Transparent;
-            panelSubMenuHelp.BackColor = Color.Transparent;
+            panelSubMenuFile.BackColor = Color.Tan;
+            panelSubMenuEdit.BackColor = Color.Tan;
+            panelSubMenuHelp.BackColor = Color.Tan;
             buttonLightTheme.ForeColor = Color.Black;
             buttonDarkTheme.ForeColor = Color.Black;
             buttonAbout.ForeColor = Color.Black;
             buttonOpenFile.ForeColor = Color.Black;
-            PanelExit.BackColor = Color.Transparent;
-            PanelMainControls.BackColor = Color.Transparent;
+            PanelExit.BackColor = Color.Tan;
+            PanelMainControls.BackColor = Color.Gray;
 
             HideSubMenu();
         }
@@ -174,7 +245,7 @@ namespace Software_Engineering_Project
         /// <param name="e"></param>
         private void ButtonDarkTheme_Click(object sender, EventArgs e)
         {
-            panelMain.BackColor = Color.DarkSlateBlue;
+            panelMain.BackColor = Color.SlateGray;
             labelTitlecard.BackColor = Color.DarkSlateGray;
             panelSideMenuPanel.BackColor = Color.Black;
             buttonFile.ForeColor = Color.White;
