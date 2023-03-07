@@ -15,6 +15,7 @@ namespace Software_Engineering_Project
 {
     public partial class FormMain : Form
     {
+        // create open file so we can pull files from our desktop to run
         readonly OpenFileDialog openFileDialog1 = new OpenFileDialog
         {
 
@@ -36,17 +37,69 @@ namespace Software_Engineering_Project
         public FormMain()
         {
             InitializeComponent();
+
+            // Hides submenus initially
+            SubMenuDesign();
+
+            buttonRun.Enabled = false;
+            buttonView.Enabled = false;
         }
 
-        private void OpenFileToolStripMenuItem_Click(object sender, EventArgs e)
+        #region Sub Menu Stuff
+
+        /// <summary>
+        /// Hides all SubMenus
+        /// </summary>
+        private void SubMenuDesign()
         {
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                listBoxProjectOpener.Items.Add(Path.GetFileName(openFileDialog1.FileName));
-            };
+            panelSubMenuFile.Visible = false;
+            panelSubMenuEdit.Visible = false;
+            panelSubMenuHelp.Visible = false;
         }
 
+        /// <summary>
+        /// Hides Sub Menus after clicked on
+        /// </summary>
+        private void HideSubMenu()
+        {
+            if(panelSubMenuFile.Visible == true) 
+            { 
+                panelSubMenuFile.Visible = false;
+            }
+            if (panelSubMenuEdit.Visible == true)
+            {
+                panelSubMenuEdit.Visible = false;
+            }
+            if (panelSubMenuHelp.Visible == true)
+            {
+                panelSubMenuHelp.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Shows the sub menus when main buttons are clicked
+        /// </summary>
+        /// <param name="subMenu"></param>
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if(subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else if (subMenu.Visible == true)
+            {
+                subMenu.Visible = false;
+            }
+        }
+        #endregion
+
+        #region Compiler Buttons
+        /// <summary>
+        /// Supposed to take and run the code from ListBoxProjectOpener
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRun_Click(object sender, EventArgs e)
         {
 
@@ -58,14 +111,141 @@ namespace Software_Engineering_Project
             //Open the file
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Will view code in pdf and answers/stats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonView_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Sub Menu Buttons
+
+        /// <summary>
+        /// Part of Submenu and its goal is to open files and store them in Listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonOpenFile_Click(object sender, EventArgs e)
+        {
+            // Add Filename into ListBox
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                listBoxProjectOpener.Items.Add(Path.GetFileName(openFileDialog1.FileName));
+            }
+            // Hides the Open File button after use
+            HideSubMenu();
+        }
+
+        /// <summary>
+        /// This button gives you the ability to go back to the normal theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonLightTheme_Click(object sender, EventArgs e)
+        {
+            panelMain.BackColor = Color.Transparent;
+            labelTitlecard.BackColor = Color.Transparent;
+            panelSideMenuPanel.BackColor = Color.Transparent;
+            buttonFile.ForeColor = Color.Black;
+            buttonEdit.ForeColor = Color.Black;
+            buttonHelp.ForeColor = Color.Black;
+            buttonProgramGrader.ForeColor = Color.Black;
+            panelSubMenuFile.BackColor = Color.Transparent;
+            panelSubMenuEdit.BackColor = Color.Transparent;
+            panelSubMenuHelp.BackColor = Color.Transparent;
+            buttonLightTheme.ForeColor = Color.Black;
+            buttonDarkTheme.ForeColor = Color.Black;
+            buttonAbout.ForeColor = Color.Black;
+            buttonOpenFile.ForeColor = Color.Black;
+            PanelExit.BackColor = Color.Transparent;
+            PanelMainControls.BackColor = Color.Transparent;
+
+            HideSubMenu();
+        }
+
+        /// <summary>
+        /// This button gives you the ability to go to a dark theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonDarkTheme_Click(object sender, EventArgs e)
+        {
+            panelMain.BackColor = Color.DarkSlateBlue;
+            labelTitlecard.BackColor = Color.DarkSlateGray;
+            panelSideMenuPanel.BackColor = Color.Black;
+            buttonFile.ForeColor = Color.White;
+            buttonEdit.ForeColor = Color.White;
+            buttonHelp.ForeColor = Color.White;
+            buttonProgramGrader.ForeColor = Color.White;
+            panelSubMenuFile.BackColor = Color.DarkSlateGray;
+            panelSubMenuEdit.BackColor = Color.DarkSlateGray;
+            panelSubMenuHelp.BackColor = Color.DarkSlateGray;
+            buttonLightTheme.ForeColor = Color.White;
+            buttonDarkTheme.ForeColor = Color.White;
+            buttonAbout.ForeColor = Color.White;
+            buttonOpenFile.ForeColor = Color.White;
+            PanelExit.BackColor = Color.DarkSlateGray;
+            PanelMainControls.BackColor = Color.Black;
+            HideSubMenu();
+        }
+
+        /// <summary>
+        /// Helpful tab for how to run this program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To Start, Click File " +
+                "then Open File. After that it'll take you" +
+                " to where you can get a cpp file. Click on OK and it will show up on the listbox." +
+                " We then can click run to get the stats and grade of the program." +
+                " Lastly we can view the Stats.","About",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            HideSubMenu();
+        }
+        #endregion
+
+        #region Menu Buttons
+
+        /// <summary>
+        /// Opens the Sub menu for files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonFile_Click(object sender, EventArgs e)
+        {
+            // show sub menu file
+            ShowSubMenu(panelSubMenuFile);
+        }
+
+        private void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelSubMenuEdit);
+        }
+
+        private void ButtonProgramGrader_Click(object sender, EventArgs e)
+        {
+            //ShowSubMenu();
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelSubMenuHelp);
+        }
+
+        #endregion
+
+        #region Exit Button
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        #endregion
 
-        private void buttonView_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
