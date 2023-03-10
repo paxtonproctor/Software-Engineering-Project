@@ -49,9 +49,9 @@
             this.panelSubMenuFile = new System.Windows.Forms.Panel();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
+            this.toolTipFile = new System.Windows.Forms.ToolTip(this.components);
             this.buttonView = new Software_Engineering_Project.ClassCustomButton();
             this.buttonRun = new Software_Engineering_Project.ClassCustomButton();
-            this.toolTipFile = new System.Windows.Forms.ToolTip(this.components);
             this.panelMain.SuspendLayout();
             this.PanelMainControls.SuspendLayout();
             this.PanelExit.SuspendLayout();
@@ -139,7 +139,7 @@
             this.ButtonExit.Size = new System.Drawing.Size(166, 61);
             this.ButtonExit.TabIndex = 0;
             this.ButtonExit.Tag = "https://icons8.com/icons/set/website";
-            this.ButtonExit.Text = "Exit";
+            this.ButtonExit.Text = "&Exit";
             this.ButtonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonExit.UseVisualStyleBackColor = true;
@@ -329,7 +329,7 @@
             this.buttonOpenFile.Size = new System.Drawing.Size(177, 55);
             this.buttonOpenFile.TabIndex = 4;
             this.buttonOpenFile.Tag = "https://icons8.com/icons/set/website";
-            this.buttonOpenFile.Text = "Open File";
+            this.buttonOpenFile.Text = "&Open File";
             this.buttonOpenFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonOpenFile.UseVisualStyleBackColor = true;
