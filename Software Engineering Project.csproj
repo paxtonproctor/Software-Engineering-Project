@@ -52,6 +52,12 @@
     <Compile Include="ClassCustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormCreateAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateAssignment.Designer.cs">
+      <DependentUpon>FormCreateAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCreateAssignment.resx">
+      <DependentUpon>FormCreateAssignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
