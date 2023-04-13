@@ -47,6 +47,10 @@
             this.buttonDarkTheme = new System.Windows.Forms.Button();
             this.buttonLightTheme = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.SubmissionDockpanel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSubmission = new System.Windows.Forms.Button();
             this.panelSubMenuFile = new System.Windows.Forms.Panel();
             this.buttonCreateAssignment = new System.Windows.Forms.Button();
             this.buttonOpenAssignment = new System.Windows.Forms.Button();
@@ -58,6 +62,7 @@
             this.panelSideMenuPanel.SuspendLayout();
             this.panelSubMenuHelp.SuspendLayout();
             this.panelSubMenuEdit.SuspendLayout();
+            this.SubmissionDockpanel.SuspendLayout();
             this.panelSubMenuFile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +86,7 @@
             this.listBoxProjectOpener.Location = new System.Drawing.Point(276, 12);
             this.listBoxProjectOpener.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxProjectOpener.Name = "listBoxProjectOpener";
-            this.listBoxProjectOpener.Size = new System.Drawing.Size(369, 356);
+            this.listBoxProjectOpener.Size = new System.Drawing.Size(369, 340);
             this.listBoxProjectOpener.TabIndex = 10;
             // 
             // listBoxOutput
@@ -93,7 +98,7 @@
             this.listBoxOutput.Location = new System.Drawing.Point(680, 12);
             this.listBoxOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxOutput.Name = "listBoxOutput";
-            this.listBoxOutput.Size = new System.Drawing.Size(369, 356);
+            this.listBoxOutput.Size = new System.Drawing.Size(369, 340);
             this.listBoxOutput.TabIndex = 3;
             // 
             // panelMain
@@ -139,7 +144,7 @@
             this.buttonHelp.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonHelp.Image = global::Software_Engineering_Project.Properties.Resources.icons8_help_30;
             this.buttonHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHelp.Location = new System.Drawing.Point(0, 486);
+            this.buttonHelp.Location = new System.Drawing.Point(0, 691);
             this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -150,7 +155,7 @@
             this.buttonHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            this.buttonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
             // PanelMainControls
             // 
@@ -227,6 +232,8 @@
             this.panelSideMenuPanel.Controls.Add(this.buttonHelp);
             this.panelSideMenuPanel.Controls.Add(this.panelSubMenuEdit);
             this.panelSideMenuPanel.Controls.Add(this.buttonEdit);
+            this.panelSideMenuPanel.Controls.Add(this.SubmissionDockpanel);
+            this.panelSideMenuPanel.Controls.Add(this.buttonSubmission);
             this.panelSideMenuPanel.Controls.Add(this.panelSubMenuFile);
             this.panelSideMenuPanel.Controls.Add(this.buttonAssignments);
             this.panelSideMenuPanel.Controls.Add(this.labelTitlecard);
@@ -242,7 +249,7 @@
             this.panelSubMenuHelp.BackColor = System.Drawing.SystemColors.Info;
             this.panelSubMenuHelp.Controls.Add(this.buttonAbout);
             this.panelSubMenuHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuHelp.Location = new System.Drawing.Point(0, 554);
+            this.panelSubMenuHelp.Location = new System.Drawing.Point(0, 759);
             this.panelSubMenuHelp.Margin = new System.Windows.Forms.Padding(4);
             this.panelSubMenuHelp.Name = "panelSubMenuHelp";
             this.panelSubMenuHelp.Size = new System.Drawing.Size(243, 137);
@@ -254,7 +261,7 @@
             this.panelSubMenuEdit.Controls.Add(this.buttonDarkTheme);
             this.panelSubMenuEdit.Controls.Add(this.buttonLightTheme);
             this.panelSubMenuEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuEdit.Location = new System.Drawing.Point(0, 349);
+            this.panelSubMenuEdit.Location = new System.Drawing.Point(0, 554);
             this.panelSubMenuEdit.Margin = new System.Windows.Forms.Padding(4);
             this.panelSubMenuEdit.Name = "panelSubMenuEdit";
             this.panelSubMenuEdit.Size = new System.Drawing.Size(243, 137);
@@ -309,7 +316,7 @@
             this.buttonEdit.ForeColor = System.Drawing.SystemColors.MenuText;
             this.buttonEdit.Image = global::Software_Engineering_Project.Properties.Resources.icons8_settings_32;
             this.buttonEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEdit.Location = new System.Drawing.Point(0, 281);
+            this.buttonEdit.Location = new System.Drawing.Point(0, 486);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -321,6 +328,82 @@
             this.buttonEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
+            // 
+            // SubmissionDockpanel
+            // 
+            this.SubmissionDockpanel.BackColor = System.Drawing.SystemColors.Info;
+            this.SubmissionDockpanel.Controls.Add(this.button3);
+            this.SubmissionDockpanel.Controls.Add(this.button2);
+            this.SubmissionDockpanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubmissionDockpanel.Location = new System.Drawing.Point(0, 349);
+            this.SubmissionDockpanel.Margin = new System.Windows.Forms.Padding(4);
+            this.SubmissionDockpanel.Name = "SubmissionDockpanel";
+            this.SubmissionDockpanel.Size = new System.Drawing.Size(243, 137);
+            this.SubmissionDockpanel.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button3.Image = global::Software_Engineering_Project.Properties.Resources.icons8_add_file_32;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 68);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(243, 68);
+            this.button3.TabIndex = 6;
+            this.button3.Tag = "https://icons8.com/icons/set/website";
+            this.button3.Text = "&Create Submissions";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ButtonCreateSubmission_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.button2.Image = global::Software_Engineering_Project.Properties.Resources.icons8_add_file_32;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(243, 68);
+            this.button2.TabIndex = 5;
+            this.button2.Tag = "https://icons8.com/icons/set/website";
+            this.button2.Text = "&Open Submissions";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ButtonOpenSubmission_Click);
+            // 
+            // buttonSubmission
+            // 
+            this.buttonSubmission.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSubmission.FlatAppearance.BorderSize = 0;
+            this.buttonSubmission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonSubmission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmission.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.buttonSubmission.Image = global::Software_Engineering_Project.Properties.Resources.icons8_file_32;
+            this.buttonSubmission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSubmission.Location = new System.Drawing.Point(0, 281);
+            this.buttonSubmission.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSubmission.Name = "buttonSubmission";
+            this.buttonSubmission.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonSubmission.Size = new System.Drawing.Size(243, 68);
+            this.buttonSubmission.TabIndex = 7;
+            this.buttonSubmission.Tag = "https://icons8.com/icons/set/website";
+            this.buttonSubmission.Text = "Submissions";
+            this.buttonSubmission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSubmission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSubmission.UseVisualStyleBackColor = true;
+            this.buttonSubmission.Click += new System.EventHandler(this.Buttonsubmission_Click);
             // 
             // panelSubMenuFile
             // 
@@ -353,7 +436,7 @@
             this.buttonCreateAssignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCreateAssignment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCreateAssignment.UseVisualStyleBackColor = true;
-            this.buttonCreateAssignment.Click += new System.EventHandler(this.buttonCreateAssignment_Click);
+            this.buttonCreateAssignment.Click += new System.EventHandler(this.ButtonCreateAssignment_Click);
             // 
             // buttonOpenAssignment
             // 
@@ -417,6 +500,7 @@
             this.panelSideMenuPanel.ResumeLayout(false);
             this.panelSubMenuHelp.ResumeLayout(false);
             this.panelSubMenuEdit.ResumeLayout(false);
+            this.SubmissionDockpanel.ResumeLayout(false);
             this.panelSubMenuFile.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -445,6 +529,10 @@
         private System.Windows.Forms.ToolTip toolTipFile;
         private System.Windows.Forms.Button buttonCreateAssignment;
         private System.Windows.Forms.Panel panelSubMenuHelp;
+        private System.Windows.Forms.Panel SubmissionDockpanel;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSubmission;
     }
 }
 

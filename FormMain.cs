@@ -36,7 +36,7 @@ namespace Software_Engineering_Project
         };
 
         // forms
-        FormCreateAssignment formCreateAssignment = new FormCreateAssignment();
+        readonly FormCreateAssignment formCreateAssignment = new FormCreateAssignment();
 
         #endregion
 
@@ -55,6 +55,7 @@ namespace Software_Engineering_Project
             panelSubMenuFile.BackColor = Color.Tan;
             panelSubMenuEdit.BackColor = Color.Tan;
             panelSubMenuHelp.BackColor = Color.Tan;
+            SubmissionDockpanel.BackColor = Color.Tan;
             buttonLightTheme.ForeColor = Color.Black;
             buttonDarkTheme.ForeColor = Color.Black;
             buttonAbout.ForeColor = Color.Black;
@@ -133,6 +134,7 @@ namespace Software_Engineering_Project
             panelSubMenuFile.Visible = false;
             panelSubMenuEdit.Visible = false;
             panelSubMenuHelp.Visible = false;
+            SubmissionDockpanel.Visible = false;
         }
 
         /// <summary>
@@ -238,6 +240,7 @@ namespace Software_Engineering_Project
             panelSubMenuFile.BackColor = Color.Tan;
             panelSubMenuEdit.BackColor = Color.Tan;
             panelSubMenuHelp.BackColor = Color.Tan;
+            SubmissionDockpanel.BackColor = Color.Tan;
             buttonLightTheme.ForeColor = Color.Black;
             buttonDarkTheme.ForeColor = Color.Black;
             buttonAbout.ForeColor = Color.Black;
@@ -288,6 +291,19 @@ namespace Software_Engineering_Project
                 " Lastly we can view the Stats.","About",MessageBoxButtons.OK,MessageBoxIcon.Information);
             HideSubMenu();
         }
+
+        private void ButtonCreateAssignment_Click(object sender, EventArgs e)
+        {
+            OpenFormCreateAssignment();
+        }
+
+        private void OpenFormCreateAssignment()
+        {
+            formCreateAssignment.Visible = true;
+            formCreateAssignment.BringToFront();
+        }
+
+
         #endregion
 
         #region Menu Buttons
@@ -308,20 +324,14 @@ namespace Software_Engineering_Project
             ShowSubMenu(panelSubMenuEdit);
         }
 
-        private void buttonCreateAssignment_Click(object sender, EventArgs e)
-        {
-            OpenFormCreateAssignment();
-        }
-
-        private void OpenFormCreateAssignment()
-        {
-            formCreateAssignment.Visible = true;
-            formCreateAssignment.BringToFront();
-        }
-
-        private void buttonHelp_Click(object sender, EventArgs e)
+        private void ButtonHelp_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelSubMenuHelp);
+        }
+
+        private void Buttonsubmission_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(SubmissionDockpanel);
         }
 
         #endregion
@@ -332,8 +342,18 @@ namespace Software_Engineering_Project
             Application.Exit();
         }
 
+
+
         #endregion
 
-        
+        private void ButtonOpenSubmission_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonCreateSubmission_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
