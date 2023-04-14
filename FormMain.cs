@@ -72,6 +72,7 @@ namespace Software_Engineering_Project
 
             #region Events
             buttonAssignments.MouseHover += ButtonFile_MouseHover;
+            buttonSubmission.MouseHover += ButtonSubmission_MouseHover;
             buttonEdit.MouseHover += ButtonEdit_MouseHover;
             buttonHelp.MouseHover += ButtonHelp_MouseHover;
             ButtonExit.MouseHover += ButtonExit_MouseHover;
@@ -122,6 +123,11 @@ namespace Software_Engineering_Project
         {
             toolTipFile.SetToolTip(buttonAssignments, "Open or Create Assignments here");
         }
+
+        private void ButtonSubmission_MouseHover(object sender, EventArgs e)
+        {
+            toolTipFile.SetToolTip(buttonSubmission, "Open or Create Submissions here");
+        }
         #endregion
 
         #region Sub Menu Stuff
@@ -153,6 +159,10 @@ namespace Software_Engineering_Project
             if (panelSubMenuHelp.Visible == true)
             {
                 panelSubMenuHelp.Visible = false;
+            }
+            if(SubmissionDockpanel.Visible == true)
+            {
+                SubmissionDockpanel.Visible = false;
             }
         }
 
@@ -292,17 +302,40 @@ namespace Software_Engineering_Project
             HideSubMenu();
         }
 
+        /// <summary>
+        /// opens create assignment form. create assignment gives the user the ability to make assignments 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCreateAssignment_Click(object sender, EventArgs e)
         {
             OpenFormCreateAssignment();
+            HideSubMenu();
         }
 
+        /// <summary>
+        /// opens create assignment form and brings it to front
+        /// </summary>
         private void OpenFormCreateAssignment()
         {
             formCreateAssignment.Visible = true;
             formCreateAssignment.BringToFront();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonOpenSubmission_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonCreateSubmission_Click(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 
@@ -337,23 +370,17 @@ namespace Software_Engineering_Project
         #endregion
 
         #region Exit Button
+
+        /// <summary>
+        /// exit application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
-
         #endregion
-
-        private void ButtonOpenSubmission_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButtonCreateSubmission_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
