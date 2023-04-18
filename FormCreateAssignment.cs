@@ -14,31 +14,14 @@ namespace Software_Engineering_Project
 {
     public partial class FormCreateAssignment : Form
     {
-
-        // create save file so we can pull files from our desktop to run
-        readonly SaveFileDialog saveFileDialog1 = new SaveFileDialog
-        {
-            //Multiselect = true,
-            InitialDirectory = @"D:\",
-            Title = "Browse Text Files",
-
-            CheckFileExists = true,
-            CheckPathExists = true,
-
-            DefaultExt = "txt",
-            Filter = "txt files (*.txt)|*.txt",
-            FilterIndex = 2,
-            RestoreDirectory = true,
-
-            //ReadOnlyChecked = true,
-            //ShowReadOnly = true,
-        };
-        private readonly string assignmentFilepath;
+        string assignmentFilepath = "";
 
         public FormCreateAssignment()
         {
             InitializeComponent();
         }
+
+        #region Classes
 
         // Class for Results
         class Result
@@ -52,7 +35,7 @@ namespace Software_Engineering_Project
         }
 
         // Class for Assignments
-        class Assignment
+        public class Assignment
         {
             public string AssignmentName { get; set; }
             public string RequiredInput { get; set; }
@@ -60,40 +43,34 @@ namespace Software_Engineering_Project
             public List<Submission> Submissions { get; set; }
             public object InputFilepath { get; internal set; }
             public object OutputFilepath { get; internal set; }
-
-            public Assignment()
-            {
-                Submissions = new List<Submission>();
-            }
         }
 
         // Class for Submissions
-        class Submission
+        public class Submission
         {
             public string StudentName { get; set; }
             public int SubmissionID { get; set; }
             public string Content { get; set; }
             public string FilePath { get; set; }
-            public Result result;
-
-
-            public Submission(string name, string content)
-            {
-                StudentName = name;
-                Content = content;
-            }
+            //public Result result;
         }
+        #endregion
 
-        private void ButtonSaveAssignment_Click(object sender, EventArgs e)
+        #region assignment functions
+        /// <summary>
+        /// Creates Assignments folder and json file
+        /// </summary>
+        public void CreateAssignment()
         {
             string assignmentName = "Assignment";
+
+            // creates a folder called CppGrader
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CppGrader");
-            object inputFilepath = 1;
-            object outputFilepath = 1;
 
-            folderPath = Path.Combine(folderPath, assignmentName);
-            Directory.CreateDirectory(folderPath);
+            object inputFilepath = "Input.txt";
+            object outputFilepath = "Output.txt";
 
+            // assignment
             Assignment newAssignment = new Assignment
             {
                 AssignmentName = textBoxAssignmentName.Text,
@@ -102,11 +79,41 @@ namespace Software_Engineering_Project
                 InputFilepath = inputFilepath,
                 OutputFilepath = outputFilepath,
             };
+            // serialize
             string json = JsonSerializer.Serialize(newAssignment);
-            string temp = Path.Combine(assignmentFilepath, "assignmentName.json");
-            File.WriteAllText(assignmentFilepath, json);
+
+            // folderpath created
+            folderPath = Path.Combine(folderPath, assignmentName);
+            Directory.CreateDirectory(folderPath);
+
+
+            string temp = Path.Combine(folderPath, $"{assignmentName}.json");
+
+            // written user info to json
+            File.WriteAllText(temp, json);
+
+            // save filepath
+            assignmentFilepath = folderPath;
+        }
+        #endregion
+
+        #region button events
+
+        /// <summary>
+        /// creates assignment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonSaveAssignment_Click(object sender, EventArgs e)
+        {
+            CreateAssignment();
         }
 
+        /// <summary>
+        /// gives the user a chance to create,edit, or save assignment before exiting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             // Display a MessageBox with Yes and No buttons
@@ -121,5 +128,7 @@ namespace Software_Engineering_Project
                 Hide();
             }
         }
+
+        #endregion
     }
 }
