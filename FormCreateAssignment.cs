@@ -33,6 +33,7 @@ namespace Software_Engineering_Project
             //ReadOnlyChecked = true,
             //ShowReadOnly = true,
         };
+        private readonly string assignmentFilepath;
 
         public FormCreateAssignment()
         {
@@ -85,54 +86,39 @@ namespace Software_Engineering_Project
 
         private void ButtonSaveAssignment_Click(object sender, EventArgs e)
         {
-            //string assignmentName = "Assignment";
-            //string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CppGrader");
-            //object inputFilepath = 1;
-            //object outputFilepath = 1;
-            //string assignmentFilepath = "s";
-            //object AssignmentFilepath = ".txt";
-
-            //Assignment newAssignment = new Assignment
-            //{
-            //    AssignmentName = textBoxAssignmentName.Text,
-            //    InputFilepath = inputFilepath,
-            //    OutputFilepath = outputFilepath,
-            //    AssignmentFilepath,
-            //    assignmentFilepath
-            //};
-            //folderPath = Path.Combine(folderPath, assignmentName);
-            //Directory.CreateDirectory(folderPath);
-            //string json = JsonSerializer.Serialize(newAssignment);
-            //string temp = Path.Combine(assignmentFilepath, "assignmentName.json");
-            //File.WriteAllText(assignmentFilepath, json);
-
-            string assignmentName = textBoxAssignmentName.Text;
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CppGrader", assignmentName);
+            string assignmentName = "Assignment";
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CppGrader");
             object inputFilepath = 1;
             object outputFilepath = 1;
+            //string requiredInput = " ";
+            //string expectedOutput = " ";
+
+            folderPath = Path.Combine(folderPath, assignmentName);
+            Directory.CreateDirectory(folderPath);
 
             Assignment newAssignment = new Assignment
             {
-                AssignmentName = assignmentName,
+                AssignmentName = textBoxAssignmentName.Text,
+                RequiredInput = textBoxRequiredInput.Text,
+                ExpectedOutput = textBoxExpectedOutput.Text,
                 InputFilepath = inputFilepath,
                 OutputFilepath = outputFilepath,
-                //AssignmentFilepath = ".txt",
             };
-
-            Directory.CreateDirectory(folderPath);
             string json = JsonSerializer.Serialize(newAssignment);
-            string jsonPath = Path.Combine(folderPath, $"{assignmentName}.json");
-            File.WriteAllText(jsonPath, json);
+            string temp = Path.Combine(assignmentFilepath, "assignmentName.json");
+            File.WriteAllText(assignmentFilepath, json);
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
+            // Display a MessageBox with Yes and No buttons
             DialogResult closeResult = MessageBox.Show("Are You Sure you Want to Exit This Window?",
                 "Make sure to Save Assignment",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
-            if(closeResult == DialogResult.Yes)
+            // Check which button the user clicked
+            if (closeResult == DialogResult.Yes)
             {
                 Hide();
             }
