@@ -90,8 +90,6 @@ namespace Software_Engineering_Project
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CppGrader");
             object inputFilepath = 1;
             object outputFilepath = 1;
-            //string requiredInput = " ";
-            //string expectedOutput = " ";
 
             folderPath = Path.Combine(folderPath, assignmentName);
             Directory.CreateDirectory(folderPath);
